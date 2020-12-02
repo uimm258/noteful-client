@@ -35,12 +35,13 @@ export default class AddFolder extends Component {
       this.setState({
         folderName:{
           value:foldername, 
-          touched:true}
+          touched:true
+        }
       })
       return
     }
 
-    fetch(`${config.API_ENDPOINT}/folders/`, {
+    fetch(`${config.API_ENDPOINT}/folder/`, {
       method: 'POST',
       headers:{
         'content-type': 'application/json'

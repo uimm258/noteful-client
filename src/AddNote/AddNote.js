@@ -19,7 +19,7 @@ export default class AddNote extends Component {
         value: "",
         touched: false,
       },
-      folderId: " ",
+      folder_id: " ",
     };
   }
 
@@ -48,7 +48,7 @@ export default class AddNote extends Component {
     const noteName = this.state.noteName.value;
     const content = this.state.content.value;
     const modified = new Date();
-    const folderID = event.currentTarget.querySelector("select").value;
+    const folder_id = event.currentTarget.querySelector("select").value;
     if (nameError) {
       this.setState({
         noteName: {
@@ -68,16 +68,16 @@ export default class AddNote extends Component {
       return;
     }
 
-    fetch(`${config.API_ENDPOINT}/notes/`, {
+    fetch(`${config.API_ENDPOINT}/note/`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        name: noteName,
-        content: content,
-        folderId: folderID,
-        modified,
+        'name': noteName,
+        'content': content,
+        'folder_id': folder_id,
+        'modified': modified,
       }),
     })
       .then((res) => res.json())

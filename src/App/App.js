@@ -62,7 +62,7 @@ class App extends Component {
         return (
             <>
                 <ErrorBoundary>
-                    {['/', '/folder/:folderId'].map(path => (
+                    {['/', '/folder/:folder_id'].map(path => (
                         <Route
                             exact
                             key={path}
@@ -82,7 +82,7 @@ class App extends Component {
         return (
             <>
                 <ErrorBoundary>
-                    {['/', '/folder/:folderId'].map(path => (
+                    {['/', '/folder/:folder_id'].map(path => (
                         <Route
                             exact
                             key={path}
